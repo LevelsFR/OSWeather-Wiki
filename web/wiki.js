@@ -95,4 +95,27 @@
   document.addEventListener('click', e => {
     if (!e.target.closest('.search-wrap')) close();
   });
+
+  // Match the reference wiki's reading progress and back-to-top interactions.
+  const progress = document.querySelector('#reading-progress span');
+  const toTop = $('back-to-top');
+  function updateScrollUI() {
+    const height = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    const ratio = Math.max(0, Math.min(1, window.scrollY / height));
+    if (progress) progress.style.width = String(Math.round(ratio * 10000) / 100) + '%';
+    document.body.classList.toggle('long-article', height > 450);
+    toTop?.classList.toggle('is-visible', window.scrollY > 400);
+  }
+  addEventListener('scroll', updateScrollUI, {passive:true});
+  addEventListener('resize', updateScrollUI);
+  updateScrollUI();
+  toTop?.addEventListener('click', () => scrollTo({top:0,behavior:'smooth'}));
+  const asideToc = $('page-toc');
+  if (asideToc && !asideToc.querySelector('a')) asideToc.hidden = true;
+  // Preserve the reference wiki's nav position between documentation pages.
+  const sidebar = $('sidebar');
+  const sidebarKey = 'osweather-sidebar-scroll:' + lang;
+  try {if (sidebar) sidebar.scrollTop=Number(sessionStorage.getItem(sidebarKey)||0);}catch{}
+  sidebar?.addEventListener('scroll',()=>{try{sessionStorage.setItem(sidebarKey,String(sidebar.scrollTop))}catch{}},{passive:true});
+
 })();

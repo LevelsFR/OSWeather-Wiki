@@ -67,77 +67,110 @@ class WikiRenderer(mistune.HTMLRenderer):
 def escape(value: str) -> str:
     return html.escape(value, quote=True)
 
+
 def nav_html(language: str, selected: str) -> str:
-    output = []
-    for en_group, fr_group, keys in GROUPS:
+    """Render the same collapsible <details> navigation structure as Cobblemon Realms Wiki."""
+    output: list[str] = []
+    for group_index, (en_group, fr_group, keys) in enumerate(GROUPS):
         group = fr_group if language == "fr" else en_group
-        links = []
+        links: list[str] = []
         for key in keys:
             label = LABELS[language][SLUGS.index(key)]
             is_active = key == selected
-            current = ' aria-current="page"' if is_active else ""
-            active_class = ' class="active"' if is_active else ""
-            links.append(f'<a href="{key}.html"{active_class}{current}><span class="nav-dot" aria-hidden="true"></span>{escape(label)}</a>')
-        output.append(f'<section class="side-group"><div class="side-group-title">{escape(group)}</div>{"".join(links)}</section>')
-    return "".join(output)
+            current = ' class="active" aria-current="page"' if is_active else ""
+            links.append(f'<li style="--depth:0"><a href="{key}.html"{current}>{escape(label)}</a></li>')
+        open_attr = " open" if selected in keys or group_index < 3 else ""
+        output.append(
+            f'<details class="nav-group"{open_attr}>'
+            f'<summary><span>{escape(group)}</span><span class="nav-chevron" aria-hidden="true"></span></summary>'
+            f'<ul>{"".join(links)}</ul></details>'
+        )
+    return "\n".join(output)
 
 def page_html(language: str, page: str, body: str, headings: list[tuple[int,str,str]]) -> str:
-    is_fr = language == "fr"
-    base = "../" if is_fr else ""
-    switch = f'../{page}.html' if is_fr else f'fr-FR/{page}.html'
-    switch_label = "English" if is_fr else "Français"
+    french = language == "fr"
+    assetbase = "../" if french else ""
+    switch = f'../{page}.html' if french else f'fr-FR/{page}.html'
+    switch_label = "EN" if french else "FR"
     label = LABELS[language][SLUGS.index(page)]
-    index = SLUGS.index(page)
-    previous = SLUGS[index - 1] if index else None
-    next_page = SLUGS[index + 1] if index + 1 < len(SLUGS) else None
-    back = "Précédent" if is_fr else "Previous"
-    forward = "Suivant" if is_fr else "Next"
-    search_label = "Rechercher dans le wiki…" if is_fr else "Search the wiki…"
-    toc_label = "Sur cette page" if is_fr else "On this page"
-    issue_label = "Signaler un problème ↗" if is_fr else "Report an issue ↗"
-    nav = nav_html(language, page)
-    toc = "".join(
+    heading_links = "".join(
         f'<a class="toc-depth-{level}" href="#{escape(anchor)}">{escape(title)}</a>'
         for level, title, anchor in headings
     )
-    prev_link = f'<a href="{previous}.html"><small>{back}</small>{escape(LABELS[language][index-1])}</a>' if previous else "<span></span>"
-    next_link = f'<a href="{next_page}.html"><small>{forward}</small>{escape(LABELS[language][index+1])}</a>' if next_page else "<span></span>"
+    toc_label = "Sur cette page" if french else "On this page"
+    search_placeholder = "Rechercher dans le wiki…" if french else "Search the wiki…"
+    menu_label = "Ouvrir le menu" if french else "Open menu"
+    issue_label = "Signaler un bug" if french else "Report a bug"
+    footer_label = "Dépôt source privé · Tous droits réservés" if french else "Private source · All Rights Reserved"
+    theme_label = "Changer le thème" if french else "Change theme"
     return f"""<!doctype html>
 <html lang="{language}" data-theme="dark">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="OS Weather public mod and API v1 documentation">
-<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#191919">
+<meta name="description" content="Official OS Weather public documentation, installation and API v1 reference.">
 <title>{escape(label)} | OS Weather Wiki</title>
-<link rel="icon" type="image/svg+xml" href="{base}assets/weather.svg">
-<link rel="manifest" href="{base}site.webmanifest">
-<link rel="stylesheet" href="{base}assets/wiki.css">
-<script>try{{document.documentElement.dataset.theme=localStorage.getItem('osweather-wiki-theme')==='light'?'light':'dark'}}catch(e){{}}</script>
-<script defer src="{base}assets/wiki.js"></script>
+<link rel="icon" type="image/svg+xml" href="{assetbase}assets/weather.svg">
+<link rel="manifest" href="{assetbase}site.webmanifest">
+<link rel="stylesheet" href="{assetbase}assets/wiki.css">
+<link rel="stylesheet" href="{assetbase}assets/wiki-enhancements.css">
+<link rel="stylesheet" href="{assetbase}assets/osweather-custom.css">
+<script>try{{document.documentElement.dataset.theme=localStorage.getItem("osweather-wiki-theme")==="light"?"light":"dark"}}catch(e){{}}</script>
+<script defer src="{assetbase}assets/wiki.js"></script>
 </head>
-<body data-root="{base}" data-language="{language}">
+<body data-root="{assetbase}" data-language="{language}">
+<div id="reading-progress" class="reading-progress" aria-hidden="true"><span></span></div>
 <header class="topbar">
-<button id="menu-button" class="menu-button" type="button" aria-label="Toggle navigation">☰</button>
-<a class="brand" href="index.html"><img src="{base}assets/weather.svg" alt="" width="35" height="35"><span><strong>OS WEATHER</strong><small>Official Wiki · API v1</small></span></a>
-<div class="search-wrap"><span class="search-icon" aria-hidden="true">⌕</span><input id="search" type="search" placeholder="{search_label}" aria-label="{search_label}" autocomplete="off" aria-expanded="false"><kbd>Ctrl K</kbd><div class="search-results" id="search-results" hidden></div></div>
-<div class="top-actions"><a class="issues-top" href="https://github.com/LevelsFR/OSWeather-Wiki/issues/new/choose" rel="noopener noreferrer">Issues ↗</a><a class="language" href="{switch}">{switch_label}</a><button type="button" id="theme-toggle" aria-label="Toggle dark and light mode">◐</button></div>
+    <button id="menu-button" class="menu-button" type="button" aria-label="{menu_label}">☰</button>
+    <a class="brand" href="index.html" aria-label="OS Weather Wiki">
+      <span class="brand-copy"><strong>OS Weather <span class="brand-version">v0.9</span></strong><small>Wiki</small></span>
+    </a>
+    <div class="search-wrap">
+      <span class="search-icon" aria-hidden="true"></span>
+      <input id="search" type="search" autocomplete="off" spellcheck="false" placeholder="{search_placeholder}" aria-label="{search_placeholder}" aria-controls="search-results" aria-expanded="false">
+      <kbd>Ctrl K</kbd>
+      <div id="search-results" class="search-results" role="listbox" hidden></div>
+    </div>
+    <div class="header-tools">
+      <a class="issues-link" href="https://github.com/LevelsFR/OSWeather-Wiki/issues/new/choose" target="_blank" rel="noopener noreferrer">{issue_label}</a>
+      <a class="language" href="{switch}" aria-label="Change language">{switch_label}</a>
+      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="{theme_label}" title="{theme_label}">
+        <span class="theme-icon theme-icon-sun" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path></svg></span>
+        <span class="theme-icon theme-icon-moon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"></path></svg></span>
+      </button>
+    </div>
 </header>
-<div class="overlay" id="overlay"></div>
+<div id="overlay" class="os-overlay"></div>
 <div class="layout">
-<aside id="sidebar" class="sidebar"><p class="sidebar-subtitle">DOCUMENTATION · 0.9 BETA</p>{nav}
-<footer class="sidebar-footer"><strong>LevelsFR</strong><div>OS Weather · All Rights Reserved</div><div>Private source code</div><a href="https://github.com/LevelsFR/OSWeather-Wiki/issues/new/choose">{issue_label}</a></footer>
-</aside>
-<main class="main"><div class="article">
-<nav class="breadcrumbs"><a href="index.html">OS Weather Wiki</a><span>›</span><span>{escape(label)}</span></nav>
-<div class="meta"><span class="tag beta">BETA 0.9.0</span><span class="tag api">API v1</span><span class="tag loader">Fabric · NeoForge</span></div>
-<article class="markdown-body">{body}</article>
-<div class="page-navigation">{prev_link}{next_link}</div>
-<footer class="page-footer"><span>© 2026 LevelsFR · All Rights Reserved</span><span>Public documentation · Proprietary source</span></footer>
-</div></main>
-<aside class="toc"><div class="toc-title">{toc_label}</div><nav>{toc}</nav></aside>
+  <nav id="sidebar" class="sidebar" aria-label="Wiki navigation">
+    <div class="sidebar-navigation">{nav_html(language, page)}</div>
+    <footer class="sidebar-credits" aria-label="Wiki credits">
+      <div class="sidebar-credits-title"><span class="sidebar-credits-mark">O</span><span>OS Weather Wiki</span></div>
+      <div class="sidebar-credit-person"><strong>LevelsFR</strong><small>OS Weather</small></div>
+      <div class="sidebar-credit-person"><small>{footer_label}</small></div>
+      <div class="sidebar-credit-person"><a href="https://github.com/LevelsFR/OSWeather-Wiki/issues/new/choose">{issue_label} ↗</a></div>
+    </footer>
+  </nav>
+  <main>
+    <article>
+      {body}
+      <footer class="article-meta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7v5l3 2"></path></svg>
+        <span>OS Weather 0.9.0-beta.10.5 · API v1 · {footer_label}</span>
+      </footer>
+    </article>
+  </main>
+  <aside id="page-toc" class="page-toc" aria-label="{toc_label}">
+    <strong class="page-toc-title">{toc_label}</strong>
+    <nav>{heading_links}</nav>
+  </aside>
 </div>
-</body></html>"""
+<button id="back-to-top" class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 14 6-6 6 6"></path></svg>
+</button>
+</body>
+</html>"""
 
 def build() -> None:
     if OUTPUT.exists():
@@ -145,6 +178,8 @@ def build() -> None:
     (OUTPUT / "assets").mkdir(parents=True)
     (OUTPUT / "fr-FR").mkdir()
     shutil.copyfile(ROOT / "web" / "wiki.css", OUTPUT / "assets" / "wiki.css")
+    shutil.copyfile(ROOT / "web" / "wiki-enhancements.css", OUTPUT / "assets" / "wiki-enhancements.css")
+    shutil.copyfile(ROOT / "web" / "osweather-custom.css", OUTPUT / "assets" / "osweather-custom.css")
     shutil.copyfile(ROOT / "web" / "wiki.js", OUTPUT / "assets" / "wiki.js")
     shutil.copyfile(ROOT / "web" / "weather.svg", OUTPUT / "assets" / "weather.svg")
     index: list[dict[str,str]] = []
