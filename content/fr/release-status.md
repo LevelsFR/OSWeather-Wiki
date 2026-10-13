@@ -13,7 +13,7 @@
 - Les tâches Gradle `test` ont été ignorées par la tâche agrégée.
 - Aucun lancement du client Minecraft, entrée en monde, test multijoueur ou lancement serveur dédié n’a été effectué.
 - Le rendu en jeu, les shaders/packs de ressources, le réseau en situation réelle, les performances serveur et l’interface de configuration restent à tester.
-- Le build a émis un diagnostic non bloquant de remappage `LevelRenderer.render` et une note de dépréciation dans le code client généré pour 26.3. Leur impact en jeu n’est pas établi.
+- Le code client généré pour 26.3 a émis une note de dépréciation. Son impact runtime n’est pas établi.
 - Aucun JAR téléchargeable officiel ni artefact Maven d’API autonome n’est publié depuis ce dépôt documentaire.
 
 Ces résultats prouvent **la compilation et les smoke tests déterministes du moteur seulement**, pas la compatibilité complète en jeu ni la préparation à la publication. Voir la [matrice de compatibilité](compatibility.md).

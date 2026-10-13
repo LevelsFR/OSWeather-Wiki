@@ -13,7 +13,7 @@
 - Gradle `test` tasks were skipped by the aggregate build.
 - No Minecraft client launch, world entry, multiplayer session or dedicated-server launch was performed.
 - Rendering, shader/resource-pack interactions, networking under real play, server performance and config UI still need runtime checks.
-- The build emitted a non-fatal `LevelRenderer.render` remapping diagnostic and a 26.3 generated-client deprecation note. Their in-game impact has not been established.
+- The 26.3 generated client code emitted a deprecation note. Runtime impact has not been established.
 - No official downloadable JAR or standalone Maven API artifact is published from this documentation repository.
 
 These results establish **build and deterministic core-smoke status only**, not full gameplay compatibility or release readiness. See the [compatibility matrix](compatibility.md).
