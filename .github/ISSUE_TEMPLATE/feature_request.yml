@@ -1,0 +1,45 @@
+name: Feature request
+description: Suggest an improvement or public API capability
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: "Please describe the desired public behavior. Do not include private code, credentials or confidential information."
+  - type: textarea
+    id: goal
+    attributes:
+      label: What problem should this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed feature or API behavior
+    validations:
+      required: true
+  - type: input
+    id: minecraft
+    attributes:
+      label: Minecraft version(s)
+      placeholder: "1.21.1 / 26.2 / 26.3"
+    validations:
+      required: true
+  - type: input
+    id: mod
+    attributes:
+      label: OS Weather version
+      placeholder: "0.9.0-beta.10.5"
+    validations:
+      required: true
+  - type: dropdown
+    id: loader
+    attributes:
+      label: Loader
+      options: [Fabric, NeoForge, Both]
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives and additional context

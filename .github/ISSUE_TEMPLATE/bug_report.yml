@@ -1,0 +1,80 @@
+name: Bug report
+description: Report a reproducible OS Weather issue
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "Please remove passwords, tokens, account identifiers, private IPs and other sensitive information from your report and logs."
+  - type: input
+    id: minecraft
+    attributes:
+      label: Minecraft version
+      placeholder: "1.21.1, 26.2 or 26.3"
+    validations:
+      required: true
+  - type: input
+    id: osweather
+    attributes:
+      label: OS Weather version
+      placeholder: "0.9.0-beta.10.5"
+    validations:
+      required: true
+  - type: dropdown
+    id: loader
+    attributes:
+      label: Mod loader
+      options: [Fabric, NeoForge]
+    validations:
+      required: true
+  - type: input
+    id: loader_version
+    attributes:
+      label: Loader version
+      placeholder: "Exact Fabric Loader or NeoForge version"
+    validations:
+      required: true
+  - type: input
+    id: java_version
+    attributes:
+      label: Java version
+      placeholder: "Java 21 or Java 25"
+    validations:
+      required: true
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Where does it happen?
+      options: ["Single-player client", "Multiplayer client", "Dedicated server"]
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Provide numbered steps, starting from launch or world entry.
+      placeholder: "1. Start Minecraft\n2. Load a world\n3. ..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs or crash report (redacted)
+      description: Paste only the relevant excerpt and remove sensitive content.
+      render: text
+  - type: textarea
+    id: context
+    attributes:
+      label: Other mods, shaders, resource packs and notes
