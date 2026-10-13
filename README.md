@@ -1,29 +1,31 @@
 # OS Weather | Official Public Documentation
 
-**OS Weather** is a server-authoritative, local atmospheric weather simulation for Minecraft, developed by **LevelsFR**.
+**OS Weather** is a server-authoritative local atmospheric weather simulation for Minecraft, developed by **LevelsFR**.
 
-> **Documentation and public issue tracker only.** This repository is not the OS Weather source repository. The software and source code remain **private and proprietary: All Rights Reserved**.
+> This is the public documentation and issue-tracker repository, not the mod source repository. The mod and source code remain private and proprietary: **All Rights Reserved**.
 
-**Documented pre-release:** `0.9.0-beta.10.5` (not a stable v1 release) · **API:** v1 (`1`) · **Mod ID:** `osweather`
+**Documented mod build:** `0.9.0-beta.10.5` (**pre-v1**) · **API revision:** `1` · **Mod ID:** `osweather`
 
-## 📚 Wiki & documentation
+## Documentation
 
-The Cobblemon Realms Wiki-inspired, responsive documentation website will be available through [OS Weather Wiki](https://levelsfr.github.io/OSWeather-Wiki/) once GitHub Pages deployment is enabled.
+The bilingual [OS Weather Wiki site](https://levelsfr.github.io/OSWeather-Wiki/) is published with GitHub Pages.
 
 - [Installation](content/en/installation.md) · [Compatibility matrix](content/en/compatibility.md)
 - [Features](content/en/features.md) · [Commands](content/en/commands.md) · [Configuration](content/en/configuration.md)
 - [API v1](content/en/api-v1.md) · [Integration examples](content/en/api-examples.md) · [Overrides](content/en/api-overrides.md) · [Dimension providers](content/en/api-dimensions.md)
-- [Release validation status](content/en/release-status.md) · [FAQ](content/en/faq.md)
+- [Release validation status](content/en/release-status.md) · [FAQ](content/en/faq.md) · [Support](content/en/support.md)
 - [Français](content/fr/index.md)
 
-## 🐛 Support
+The six configured variants (Minecraft 1.21.1, 26.2 and 26.3 on Fabric and NeoForge) compile and pass 47 deterministic core smoke scenarios each. **Client launch, world entry and dedicated-server runtime are not yet validated**, so this is not a stable V1 release and no runtime compatibility guarantee is made.
 
-For bugs and feature requests, use [GitHub Issues](https://github.com/LevelsFR/OSWeather-Wiki/issues/new/choose). Provide the Minecraft, OS Weather and loader versions, reproduction steps and **redacted** logs. Never post tokens, private server addresses, personal information or sensitive configurations.
+## Support
 
-## ⚖️ Proprietary software and public API
+Report bugs and request features through [GitHub Issues](https://github.com/LevelsFR/OSWeather-Wiki/issues/new/choose). Include the exact Minecraft, loader and mod versions, reproduction steps and **redacted** logs. Never post tokens, private server addresses, personal information or sensitive configuration.
 
-OS Weather is **All Rights Reserved**. Publishing API signatures and examples does **not** grant a license to copy, distribute, modify, sublicense, reverse engineer or redistribute the software. The legal terms governing third-party addon distribution have **not yet been expressly approved**. Read [Rights and integration permissions](RIGHTS.md) and seek owner authorization as necessary.
+## Proprietary software and API
 
-## 🔒 Private-source boundary
+Publishing API signatures and examples does **not** grant a software or addon-distribution license. No standalone Maven API artifact is published, and third-party addon distribution terms have not been expressly approved. Read [Rights and API permissions](RIGHTS.md).
 
-No source code, internal configuration, build files, secrets, runtime binaries, private logs or private-repository checkout is included here. This public repository is maintained separately; **LevelsFR/OSWeather remains private**.
+## Private-source boundary
+
+This repository does not contain mod source, private build files, secrets, runtime binaries or private logs. `LevelsFR/OSWeather` remains private. The public [Pages site](https://levelsfr.github.io/OSWeather-Wiki/) is the canonical documentation; the native GitHub Wiki is separate.

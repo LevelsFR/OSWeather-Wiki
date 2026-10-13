@@ -1,17 +1,30 @@
 # Configuration
-OS Weather sépare le rendu local et la simulation contrôlée par le serveur.
 
-| Fichier | Emplacement | Rôle |
-|---|---|---|
-| `osweather-client.toml` | `config/` côté client | Préférences graphiques et sonores |
-| `osweather-server.toml` | `config/` côté serveur | Règles de simulation et gameplay |
+OS Weather sépare les options de rendu propres au client des paramètres de simulation contrôlés par le serveur. Les deux fichiers TOML se trouvent dans le dossier Minecraft `config/`.
 
-## Options client
-Les préférences comprennent les nuages et leur qualité, les précipitations, le brouillard, les particules, les éclairs visuels et les sons météo. Certains effets ne sont pas encore finalisés dans cette bêta.
+## Client : `osweather-client.toml`
 
-Sur **Fabric**, Cloth Config et Mod Menu, facultatifs, offrent une interface en jeu. Sans eux, modifier directement le fichier client.
+| Clé | Défaut | Rôle |
+|---|---:|---|
+| `enhanced_clouds` | `true` | Active les changements d’affichage des nuages d’OS Weather. |
+| `precipitation` | `true` | Active l’affichage des précipitations du mod. |
+| `fog` | `true` | Active les effets de brouillard météo. |
+| `particles` | `true` | Active les particules météo. |
+| `visual_lightning` | `true` | Active l’affichage visuel des éclairs. |
+| `sounds` | `true` | Active les sons météo. |
+| `cloud_quality` | `2` | Détail des nuages : 0 faible, 1 moyen, 2 élevé, 3 ultra (limité à 0–3). |
 
-## Paramètres serveur
-**Le serveur fait autorité.** La configuration locale d’un joueur ne remplace pas les règles météo serveur. Modifier le fichier côté serveur, puis redémarrer si nécessaire. **Le rechargement à chaud n’est pas encore validé comme complet.**
+Les options client sont modifiables en jeu si les dépendances facultatives de l’écran de configuration sont installées, ou directement dans le fichier. Sous Fabric, Cloth Config fournit l’écran et Mod Menu, facultatif, son entrée. NeoForge enregistre l’écran lorsque Cloth Config est présent. Aucun de ces mods n’est nécessaire au chargement d’OS Weather.
 
-Ne partagez jamais de fichiers de configuration réels contenant des informations privées.
+## Serveur : `osweather-server.toml`
+
+| Clé | Défaut | Rôle |
+|---|---:|---|
+| `enabled` | `true` | Active le service météo serveur. |
+| `local_weather` | `true` | Utilise le comportement météo local/par joueur. |
+| `gameplay_weather` | `true` | Active l’intégration météo gameplay. |
+| `real_lightning` | `false` | Autorise les éclairs réels uniquement si le gameplay météo est activé et `local_weather=false` ; les impacts sont globaux au monde. |
+| `sync_interval_ticks` | `100` | Intervalle des snapshots, limité à 40–1 200 ticks. |
+| `sleep_calming_bias` | `0.10` | Biais d’apaisement pendant le sommeil, limité à 0–0,35. |
+
+Le serveur fait autorité. Toute modification de son fichier nécessite un redémarrage ; `/osweather reload` affiche seulement cet avertissement et ne recharge pas les paramètres. Ne publiez jamais une configuration serveur active sans en avoir masqué les informations privées.

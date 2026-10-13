@@ -1,24 +1,25 @@
-# Frequently asked questions
-## Is OS Weather open source?
-**No.** The mod and source code are private, proprietary and **All Rights Reserved**. This is a public documentation and issue-tracking repository.
+# FAQ
 
-## Is this a stable v1 release?
-**No.** The documented mod is `0.9.0-beta.10.5`, a pre-v1 candidate.
+## Is OS Weather a stable v1?
+No. The documented mod is `0.9.0-beta.10.5`, a pre-v1 release. **API revision 1 is not mod version 1.0.**
 
-## What is the difference between API v1 and mod v1?
-The API compatibility revision is **1**. The mod itself has not reached a stable **1.0** release.
+## What has actually been tested?
+On 2026-10-14, all six configured Minecraft/loader targets assembled and each deterministic core smoke check passed 47 scenarios. No client, world-entry, multiplayer or dedicated-server runtime validation was performed. See [release status](release-status.md).
 
 ## Is Minecraft 26.3 fully supported?
-It is a configured build target with compilation and core smoke checks documented. **Full in-game/world-entry validation remains pending**, just like the other five variants.
+It is a configured build target that compiled and passed the core smoke check. Runtime support remains unverified.
 
-## Does the mod work in the Nether or End?
-The built-in simulation owns the Overworld. A third-party addon **may implement a dimension provider** for other worlds. This does not claim tested support for a specific addon.
+## Can I download the mod here?
+No binary is published by this documentation repository. Install only a JAR officially distributed by the author.
 
-## Does Fabric require Cloth Config or Mod Menu?
-**No.** Those optional mods expose a client settings screen; file-based settings remain available. Fabric API is required on Fabric.
+## Does the mod support dimensions beyond the Overworld?
+The built-in simulation owns the Overworld. The API exposes a dimension-provider extension point, but this is not evidence that a particular addon or dimension has been tested.
 
-## Can my addon use this API?
-The technical hooks are documented. **A legal permission to distribute third-party integrations has not yet been expressly published.** Obtain written authorization where necessary. See [rights](rights.md).
+## Are Cloth Config and Mod Menu required?
+No. They are optional configuration-screen integrations. TOML files remain available without them; see [configuration](configuration.md).
 
-## Where can I report a bug?
-Use the [public Issues forms](https://github.com/LevelsFR/OSWeather-Wiki/issues/new/choose) with version numbers, reproduction steps and sanitized logs.
+## Can I distribute an addon using the API?
+The API pages describe technical hooks, not legal permission. Terms for distributing third-party integrations have not been expressly published; obtain written authorization where needed. See [rights](rights.md).
+
+## Where do I report a bug?
+Use the [public issue forms](https://github.com/LevelsFR/OSWeather-Wiki/issues/new/choose) and include redacted logs, exact versions and reproduction steps.

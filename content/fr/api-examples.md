@@ -1,5 +1,8 @@
 # API v1 : exemples d’intégration
-> Exemples rédigés à partir des signatures publiques de l’API, **sans copie du code propriétaire**. Ils sont illustratifs et **n’ont pas été compilés ni testés comme addons complets**. Leur publication **ne constitue pas une autorisation juridique de distribuer un addon**.
+
+> Ces extraits illustrent les signatures API documentées. Rédigés indépendamment, ils ne sont **ni compilés ni testés comme addon prêt à installer** et ne sont pas copiés depuis le code privé.
+
+La révision 1 de l’API ne signifie pas que le mod est en version 1.0 et n’autorise pas la distribution d’une intégration. Aucun JAR API autonome ni coordonnées Maven ne sont publiés ; un addon nécessite une dépendance de compilation autorisée correspondant à la build du mod. Voir la [référence API](api-v1.md) et les [droits](rights.md).
 
 ## Lire la météo gameplay
 ```java

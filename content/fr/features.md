@@ -1,17 +1,13 @@
 # Fonctionnalités
-## Simulation atmosphérique côté serveur
-L’Overworld bénéficie d’une météo locale. Le serveur calcule les conditions ; chaque client reçoit des états synchronisés et réalise des transitions fluides.
 
-- **47 scénarios climatiques** pondérés selon l’environnement.
-- **Cellules de 512 × 512 blocs** et interpolation spatiale pour éviter les frontières nettes.
-- **Simulation uniquement dans les zones actives**, sans chargement forcé des chunks.
-- **Persistance** de l’état atmosphérique lorsque les joueurs reviennent.
-- **États calculés** pour la pluie, la neige, le vent, les nuages, le brouillard, les orages, les tempêtes de sable et les blizzards.
-- **Overrides** visuels et gameplay indépendants, avec priorités et libération explicite.
-- **Providers** pour permettre à des addons de gérer la météo d’autres dimensions.
+OS Weather calcule côté serveur les conditions atmosphériques locales de l’Overworld et synchronise des snapshots propres aux joueurs vers les clients.
 
-## Affichage client
-La bêta comprend la synchronisation individuelle et des transitions visuelles. **Les finitions du rendu des nuages, les shaders, les effets spécialisés et la validation complète en jeu restent à réaliser.** Voir [statut](release-status.md).
+- **47 scénarios climatiques** et un moteur de simulation déterministe.
+- **Cellules atmosphériques de 512 blocs** avec interpolation spatiale.
+- **Mises à jour autour des zones actives** ; le moteur ne force pas le chargement des chunks Minecraft.
+- **Persistance de l’atmosphère** et rattrapage du temps écoulé.
+- **États météo** pour pluie, neige, vent, nuages, brouillard, orages, tempêtes de sable et blizzards.
+- **Overrides visuels et gameplay** avec priorités et handles de libération explicites.
+- **API de providers de dimensions** pour les intégrations d’addons.
 
-## Compatibilité vanilla
-Les commandes vanilla `/weather` sont reliées aux overrides d’OS Weather. Cela ne garantit pas une compatibilité testée avec tous les mods graphiques.
+Le code et les smoke tests moteur ne constituent pas une validation complète en jeu. Les finitions de rendu, effets spécialisés, shaders/packs de ressources, présentation des éclairs et comportement runtime restent des étapes de sortie. Les commandes vanilla `/weather clear/rain/thunder` sont reliées au mod, sans garantie de compatibilité avec chaque autre mod météo ou graphique. Voir le [statut de sortie](release-status.md).

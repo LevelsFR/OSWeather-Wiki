@@ -1,18 +1,17 @@
-# Tableau de compatibilité
-**Version documentée :** `0.9.0-beta.10.5` · **API :** v1
+# Matrice de compatibilité
 
-| Minecraft | Loader | Java | Base configurée | Vérifié | Reste à vérifier |
-|---|---|---:|---|---|---|
-| 1.21.1 | Fabric | 21 | Fabric API 0.116.17+1.21.1 | Compilation / smoke tests | Lancement, monde, serveur |
-| 1.21.1 | NeoForge | 21 | NeoForge 21.1.250 | Compilation / smoke tests | Lancement, monde, serveur |
-| 26.2 | Fabric | 25 | Fabric API 0.160.0+26.2 | Compilation / smoke tests | Lancement, monde, serveur |
-| 26.2 | NeoForge | 25 | NeoForge 26.2.0.88 | Compilation / smoke tests | Lancement, monde, serveur |
-| 26.3 | Fabric | 25 | Fabric API 0.160.7+26.3 | Compilation / smoke tests | Lancement, monde, serveur |
-| 26.3 | NeoForge | 25 | NeoForge 26.3.0.16-beta | Compilation / smoke tests | Lancement, monde, serveur |
+**Mod :** `0.9.0-beta.10.5` (avant la v1) · **Révision API :** `1`  
+**Compilation et smoke test moteur vérifiés :** 2026-10-14 · **Runtime vérifié :** non
 
-## Interprétation
-- **Compilation / smoke tests :** builds et vérifications déterministes du moteur documentés.
-- **Non vérifié :** entrée en monde, associations shaders/resource packs, performances sur serveur peuplé.
-- **Versions futures :** les versions Minecraft après 26.3 sont **envisagées**, pas prises en charge à ce stade. Les versions 1.21.x intermédiaires ne sont pas des cibles documentées.
+| Minecraft | Loader | Java | Compilation + smoke test (47 scénarios) | Client/monde/serveur en jeu |
+|---|---|---:|---|---|
+| 1.21.1 | Fabric | 21 | Réussi | Non testé |
+| 1.21.1 | NeoForge | 21 | Réussi | Non testé |
+| 26.2 | Fabric | 25 | Réussi | Non testé |
+| 26.2 | NeoForge | 25 | Réussi | Non testé |
+| 26.3 | Fabric | 25 | Réussi | Non testé |
+| 26.3 | NeoForge | 25 | Réussi | Non testé |
 
-**Une compilation réussie n’est pas une validation en jeu.** Voir [statut de sortie](release-status.md).
+Le build utilisait Fabric API `0.116.17+1.21.1`, `0.160.0+26.2`, `0.160.7+26.3` ; et NeoForge `21.1.250`, `26.2.0.88`, `26.3.0.16-beta`, respectivement.
+
+La compilation et les smoke tests **ne prouvent pas** que le client démarre, qu’un monde s’ouvre ou qu’un serveur dédié fonctionne. Testez la combinaison exacte de Minecraft et du loader avant de l’utiliser sur un monde important. Les autres versions ne sont pas déclarées compatibles. Voir le [statut de sortie](release-status.md).

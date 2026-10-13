@@ -1,20 +1,19 @@
-# Statut avant la v1
-**Version documentée :** `0.9.0-beta.10.5`. Il ne s’agit **pas d’une v1 stable**.
+# Statut de sortie avant la v1
 
-## Implémenté et vérifié localement
-- Moteur atmosphérique Java déterministe avec persistance
-- 47 scénarios climatiques et interpolation sur des cellules de 512 blocs
-- Simulation active sans forcer le chargement des chunks
-- Overrides avec priorités, provenance et handles de libération
-- API v1 et registre de providers pour d’autres dimensions
-- Modèle de snapshots météo par joueur et base des transitions client
-- Six variantes configurées, avec compilation et smoke tests déterministes documentés
+**Snapshot :** mod `0.9.0-beta.10.5` ; révision de l’API `1`. Le mod **n’est pas une version stable 1.0**.
 
-## À vérifier avant une v1 publique
-- Lancement et entrée en monde sur les six variantes
-- Tests sur serveur dédié avec plusieurs joueurs et mesure des performances
-- Shaders, packs de ressources et nouvelles API de rendu
-- Finitions brouillard, sable, blizzard, neige et effets d’éclairs
-- Finitions graphiques et rechargement à chaud de la configuration
+## Vérifié localement le 14 octobre 2026
 
-**Une compilation et des tests unitaires ne prouvent pas la stabilité en jeu.** Voir [compatibilité](compatibility.md).
+- `gradlew assembleAllVersions --no-daemon --max-workers=1` s’est terminé avec succès.
+- Les six cibles configurées ont été assemblées : 1.21.1, 26.2 et 26.3 sous Fabric et NeoForge.
+- Le `coreSmoke` de chaque cible a réussi sur **47 scénarios**.
+
+## Pas encore vérifié
+
+- Les tâches Gradle `test` ont été ignorées par la tâche agrégée.
+- Aucun lancement du client Minecraft, entrée en monde, test multijoueur ou lancement serveur dédié n’a été effectué.
+- Le rendu en jeu, les shaders/packs de ressources, le réseau en situation réelle, les performances serveur et l’interface de configuration restent à tester.
+- Le build a émis un diagnostic non bloquant de remappage `LevelRenderer.render` et une note de dépréciation dans le code client généré pour 26.3. Leur impact en jeu n’est pas établi.
+- Aucun JAR téléchargeable officiel ni artefact Maven d’API autonome n’est publié depuis ce dépôt documentaire.
+
+Ces résultats prouvent **la compilation et les smoke tests déterministes du moteur seulement**, pas la compatibilité complète en jeu ni la préparation à la publication. Voir la [matrice de compatibilité](compatibility.md).

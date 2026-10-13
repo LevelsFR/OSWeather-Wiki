@@ -1,21 +1,21 @@
 # Installation
-> **Pre-release notice:** documentation covers `0.9.0-beta.10.5`. The six target variants are configured and compile in the project; **runtime launch/world-entry validation remains pending**. Do not assume a public binary exists until the author distributes one.
 
-## Requirements
-| Minecraft | Loader | Java |
-|---|---|---|
-| 1.21.1 | Fabric or NeoForge | 21 |
-| 26.2 | Fabric or NeoForge | 25 |
-| 26.3 | Fabric or NeoForge | 25 |
+> **Pre-release:** the documented build is `0.9.0-beta.10.5`, not a stable v1. This documentation repository does not publish mod binaries. Use only a JAR officially supplied by the author.
 
-### Steps
-1. Obtain the **official distributed OS Weather JAR** for your Minecraft version and loader.
+| Minecraft | Loader | Java | Build/core smoke | In-game runtime |
+|---|---|---:|---|---|
+| 1.21.1 | Fabric or NeoForge | 21 | Pass | Not tested |
+| 26.2 | Fabric or NeoForge | 25 | Pass | Not tested |
+| 26.3 | Fabric or NeoForge | 25 | Pass | Not tested |
+
+The build and smoke results were last verified on 2026-10-14. A successful build does not guarantee that the game starts or a world loads.
+
+## Install
+
+1. Obtain the official runtime JAR matching both Minecraft and the loader.
 2. Install the matching Fabric or NeoForge loader.
-3. **Fabric:** install Fabric API matching the target Minecraft release.
-4. Place the correct OS Weather JAR into the instance/server `mods` directory.
-5. Launch and inspect the log for load failures. For multiplayer, use a matching server installation where required.
+3. On Fabric, install Fabric API for the same Minecraft version.
+4. Put the runtime JAR in the instance's `mods/` directory.
+5. For multiplayer, use a matching mod build on the server and clients where required.
 
-### Configuration
-Client settings use `config/osweather-client.toml`; server-side simulation settings use `config/osweather-server.toml`. Edit server settings on the server. On Fabric, **Cloth Config + Mod Menu are optional** for the client settings screen; the file configuration remains available without them.
-
-Consult [compatibility](compatibility.md) before reporting a loader failure. **Never install a sources JAR** as the runtime mod.
+Client settings are in `config/osweather-client.toml`; server simulation settings are in `config/osweather-server.toml` on the server. Cloth Config/Mod Menu are optional UI integrations. Never install a sources JAR as the mod. See [compatibility](compatibility.md) and [configuration](configuration.md).

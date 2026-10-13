@@ -1,21 +1,21 @@
 # Installation
-> **Attention, préversion :** cette documentation couvre `0.9.0-beta.10.5`. Les six variantes sont configurées et compilables, mais **leur lancement et leur entrée en monde ne sont pas encore entièrement validés**. La disponibilité d’un JAR public n’est pas présumée.
 
-## Prérequis
-| Minecraft | Loader | Java |
-|---|---|---|
-| 1.21.1 | Fabric ou NeoForge | 21 |
-| 26.2 | Fabric ou NeoForge | 25 |
-| 26.3 | Fabric ou NeoForge | 25 |
+> **Préversion :** la build documentée est `0.9.0-beta.10.5`, pas une v1 stable. Ce dépôt documentaire ne publie aucun binaire du mod. Utilisez uniquement un JAR officiellement transmis par l’auteur.
 
-### Étapes
-1. Récupérer le **JAR officiel distribué** correspondant à Minecraft et au loader.
-2. Installer la bonne version de Fabric ou NeoForge.
-3. **Fabric :** installer Fabric API compatible.
-4. Placer le JAR OS Weather dans le dossier `mods` du client ou du serveur.
-5. Lancer le jeu et consulter les logs si le chargement échoue. En multijoueur, installer aussi le mod côté serveur lorsque nécessaire.
+| Minecraft | Loader | Java | Build/smoke moteur | Runtime en jeu |
+|---|---|---:|---|---|
+| 1.21.1 | Fabric ou NeoForge | 21 | Réussi | Non testé |
+| 26.2 | Fabric ou NeoForge | 25 | Réussi | Non testé |
+| 26.3 | Fabric ou NeoForge | 25 | Réussi | Non testé |
 
-### Paramètres
-Les paramètres client se trouvent dans `config/osweather-client.toml`. Les paramètres de simulation serveur sont dans `config/osweather-server.toml`, à modifier **sur le serveur**. Sous Fabric, **Cloth Config et Mod Menu sont facultatifs** pour disposer d’une interface de configuration.
+La compilation et les smoke tests ont été vérifiés pour la dernière fois le 14 octobre 2026. Une compilation réussie ne garantit pas le démarrage du jeu ni le chargement d’un monde.
 
-Voir [compatibilité](compatibility.md). **Ne pas installer de JAR de sources** à la place du mod.
+## Installation
+
+1. Obtenir le JAR runtime officiel correspondant à la version de Minecraft et au loader.
+2. Installer la version correspondante de Fabric ou NeoForge.
+3. Sous Fabric, installer Fabric API pour la même version de Minecraft.
+4. Placer le JAR runtime dans le dossier `mods/` de l’instance.
+5. En multijoueur, utiliser une build correspondante sur le serveur et les clients lorsque nécessaire.
+
+Les paramètres client sont dans `config/osweather-client.toml` ; ceux de la simulation serveur dans le `config/osweather-server.toml` du serveur. Cloth Config/Mod Menu sont des intégrations UI facultatives. N’installez jamais un JAR de sources comme mod. Voir [compatibilité](compatibility.md) et [configuration](configuration.md).

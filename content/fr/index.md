@@ -1,19 +1,16 @@
-# ☁️ OS Weather
-Bienvenue dans la **documentation publique officielle** d’**OS Weather**, un système météorologique local pour Minecraft développé par **LevelsFR** et piloté par le serveur.
+# OS Weather
 
-> **Statut bêta :** `0.9.0-beta.10.5` est une version candidate, pas une v1 stable. **API publique :** v1. **Licence :** propriétaire, All Rights Reserved.
+**OS Weather** est une simulation météo atmosphérique locale pour l’Overworld, calculée côté serveur et synchronisée aux clients.
 
-## Ce que propose le mod
-- Une météo locale, plutôt qu’un unique état météorologique pour tout le monde
-- Une simulation contrôlée par le serveur et des transitions visuelles progressives
-- Une grille atmosphérique de 512 blocs, des scénarios climatiques et leur persistance
-- Deux états météo distincts pour le visuel et le gameplay
-- Des points d’extension pour les autres dimensions via l’API publique
+> **Préversion :** le mod est `0.9.0-beta.10.5`, pas une V1 stable. Son API publique est à la révision **1** : le numéro de l’API et la version du mod sont indépendants.
 
-## Pour commencer
-1. [Installation](installation.md) et [compatibilité](compatibility.md)
-2. [Fonctionnalités](features.md), [commandes](commands.md) et [configuration](configuration.md)
-3. Pour les développeurs : [API v1](api-v1.md) et [exemples](api-examples.md)
-4. [FAQ](faq.md) et [signaler un bug](support.md)
+Vérification locale du 14 octobre 2026 : les six variantes configurées (Minecraft 1.21.1, 26.2 et 26.3, Fabric et NeoForge) ont été assemblées, et leur smoke test du moteur a réussi sur 47 scénarios. Les lancements du jeu, l’entrée dans un monde et les tests serveur dédiés restent à faire.
 
-**Important :** ce dépôt contient uniquement de la documentation. Le code reste privé et n’est pas open source. Voir [droits et permissions](rights.md).
+## Documentation
+
+- [Installation](installation.md) · [Compatibilité](compatibility.md) · [Fonctionnalités](features.md)
+- [Commandes](commands.md) · [Configuration](configuration.md)
+- [API v1](api-v1.md) · [Exemples](api-examples.md) · [Overrides](api-overrides.md) · [Providers de dimensions](api-dimensions.md)
+- [Statut de sortie](release-status.md) · [FAQ](faq.md) · [Support](support.md)
+
+Ce site documente le code, mais ne distribue pas de JAR. N’installez que les builds officiellement transmis par l’auteur. Le dépôt source du mod reste privé ; cette documentation ne constitue ni une licence du logiciel, ni une autorisation de distribuer un addon. Voir [droits et permissions](rights.md).

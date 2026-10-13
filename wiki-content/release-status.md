@@ -1,20 +1,19 @@
 # Pre-v1 release status
-**Documented snapshot:** `0.9.0-beta.10.5`. This is **not a stable v1 release**.
 
-## Implemented and locally validated
-- Deterministic pure-Java atmosphere core and persistence
-- 47 climate-weighted scenarios; spatial interpolation over 512-block cells
-- Active-area simulation without forced chunk loading
-- Priority/source-aware overrides and their release handles
-- API v1 and dimension-provider registration
-- Per-player weather snapshot model and client interpolation baseline
-- Six configured build variants with documented compilation and deterministic core smoke checks
+**Snapshot:** mod `0.9.0-beta.10.5`; API revision `1`. The mod is **not a stable 1.0 release**.
 
-## Pending runtime and release gates
-- Launch client and enter a world on each of the six targets
-- Test dedicated servers and realistic player-load performance
-- Verify shader/resource-pack combinations and new rendering APIs
-- Finish specialized fog, sandstorm, blizzard, snow rendering and lightning presentation
-- Validate remaining renderer polish and hot configuration reload
+## Verified locally on 2026-10-14
 
-**Do not interpret compilation and smoke tests as runtime validation.** See the [compatibility matrix](compatibility.md).
+- `gradlew assembleAllVersions --no-daemon --max-workers=1` completed successfully.
+- All six configured targets assembled: 1.21.1, 26.2 and 26.3 on Fabric and NeoForge.
+- Each target's `coreSmoke` passed **47 scenarios**.
+
+## Not verified
+
+- Gradle `test` tasks were skipped by the aggregate build.
+- No Minecraft client launch, world entry, multiplayer session or dedicated-server launch was performed.
+- Rendering, shader/resource-pack interactions, networking under real play, server performance and config UI still need runtime checks.
+- The build emitted a non-fatal `LevelRenderer.render` remapping diagnostic and a 26.3 generated-client deprecation note. Their in-game impact has not been established.
+- No official downloadable JAR or standalone Maven API artifact is published from this documentation repository.
+
+These results establish **build and deterministic core-smoke status only**, not full gameplay compatibility or release readiness. See the [compatibility matrix](compatibility.md).

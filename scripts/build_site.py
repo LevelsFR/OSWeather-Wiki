@@ -124,7 +124,7 @@ def page_html(language: str, page: str, body: str, headings: list[tuple[int,str,
 <header class="topbar">
     <button id="menu-button" class="menu-button" type="button" aria-label="{menu_label}">☰</button>
     <a class="brand" href="index.html" aria-label="OS Weather Wiki">
-      <span class="brand-copy"><strong>OS Weather <span class="brand-version">v0.9</span></strong><small>Wiki</small></span>
+      <span class="brand-copy"><strong>OS Weather <span class="brand-version">0.9 beta</span></strong><small>Wiki</small></span>
     </a>
     <div class="search-wrap">
       <span class="search-icon" aria-hidden="true"></span>
@@ -198,7 +198,7 @@ def build() -> None:
                 "title": LABELS[language][SLUGS.index(slug)],
                 "lang": language,
                 "url": ("fr-FR/" if language == "fr" else "") + slug + ".html",
-                "text": re.sub(r"\\s+", " ", raw)[:6500],
+                "text": re.sub(r"\s+", " ", raw)[:6500],
             })
     (OUTPUT / "search-index.json").write_text(
         json.dumps(index, ensure_ascii=False, separators=(",",":")), encoding="utf-8"

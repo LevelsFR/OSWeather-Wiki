@@ -1,29 +1,19 @@
 # Référence API v1
-**Namespace :** `com.ourstory.osweather.api` · **Version API :** `1` · **Version du mod :** `0.9.0-beta.10.5`
 
-> Le numéro de l’API évolue indépendamment du mod. Ces signatures décrivent des points d’extension techniques ; **elles ne constituent pas une licence de distribution d’addons**.
+**Package :** `com.ourstory.osweather.api` · **Révision API :** `1` · **Mod documenté :** `0.9.0-beta.10.5` (pré-v1).
 
-## Point d’accès
-`com.ourstory.osweather.OSWeather.api()` retourne l’interface `OSWeatherApi` :
+La révision de l’API et la version de sortie du mod sont indépendantes. Ces pages décrivent les points d’extension techniques, pas une version stable du mod ni une licence de distribution d’addons.
 
-| Méthode | Rôle |
+## Principales entrées
+
+| Type | Rôle |
 |---|---|
-| `apiVersion()` | Numéro de l’API |
-| `visualWeather(WeatherContext)` | Météo utilisée pour l’affichage |
-| `gameplayWeather(WeatherContext)` | Météo utilisée par le gameplay |
-| `setOverride(UUID, WeatherOverride)` | Créer un override et son handle |
-| `releaseOverride(OverrideHandle)` | Libérer un override |
-| `registerDimensionProvider(DimensionWeatherProvider)` | Fournir la météo d’une dimension |
+| `OSWeatherApi` | Interroger la météo visuelle/gameplay, gérer les overrides et enregistrer des providers de dimensions. |
+| `WeatherContext` | Contexte de dimension, joueur éventuel, position et tick. Une dimension nulle prend la valeur Overworld. |
+| `AtmosphereSnapshot` | Résultat immuable avec identifiants météo/scénario et valeurs atmosphériques. |
+| `WeatherOverride` | Définition d’override ; intensité limitée et au moins un mode visuel/gameplay activé. |
+| `DimensionProviderRegistry` | Trie les providers par priorité ; une inscription avec le même identifiant remplace la précédente. |
 
-## WeatherContext
-Champs : `dimensionId` (String), `playerId` (UUID), `x`, `y`, `z` (double), `gameTick` (long).
+L’API actuelle expose `apiVersion()`, `visualWeather(context)`, `gameplayWeather(context)`, `setOverride(playerUuid, override)`, `releaseOverride(handle)` et `registerDimensionProvider(provider)`. Voir les pages [overrides](api-overrides.md), [dimensions](api-dimensions.md) et [exemples](api-examples.md).
 
-## AtmosphereSnapshot
-Champs : `weatherId`, `scenarioId`, `temperatureC`, `humidity`, `pressureHpa`, `windX`, `windZ`, `cloudCover`, `precipitation`, `thunder`, `fog`, `sandstorm`, `snow`, `visibility`, `gameTick`.
-
-Helpers : `windSpeed()`, `precipitationType()`, `isRaining()`, `isSnowing()`, `isThundering()`. Types : `NONE`, `RAIN`, `SNOW`.
-
-## Périmètre
-Le moteur couvre `minecraft:overworld`. Les autres dimensions passent par des [providers](api-dimensions.md). Utiliser les packages publics `api`, pas les implémentations `internal` ou propres aux loaders.
-
-Voir les [exemples](api-examples.md) et les [overrides](api-overrides.md).
+**Distribution :** aucun JAR API autonome ni coordonnées Maven ne sont publiés actuellement. Le dépôt source est privé. Cette référence ne remplace pas une dépendance de compilation autorisée.

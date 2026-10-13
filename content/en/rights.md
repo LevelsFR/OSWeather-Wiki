@@ -1,11 +1,7 @@
 # Rights, license and API permissions
-**Copyright © 2026 LevelsFR. All Rights Reserved.**
 
-OS Weather is **proprietary**. The software source repository remains **private**. Public documentation and issue tracking do not make the project open source.
+OS Weather and its private source code are proprietary and **All Rights Reserved**. This public repository publishes documentation and issue forms; it does not release or license the mod source or binaries.
 
-The proprietary license does not grant general permission to copy, redistribute, publish, modify, sublicense or sell the OS Weather software or its source without prior written approval.
+Publishing API signatures and independently written examples describes technical integration points only. It does not itself grant permission to copy or redistribute the mod, or to publish/distribute an addon. The terms for third-party addon distribution have not been expressly approved or published. Obtain written authorization from the copyright holder where needed.
 
-## Public API
-The public API v1 documentation describes **technical integration points only**. Publishing signatures and original illustrative examples does **not** itself grant permission to distribute a third-party addon, or to redistribute the mod.
-
-**Permission terms for integrating with and distributing addons using API v1 have not been explicitly approved or published.** Obtain written authorization from the copyright holder where needed. No proposed integration license should be treated as effective until approved.
+The legal text in the mod's private repository governs the software. Do not infer broader rights from this wiki. For technical facts, see the [API reference](api-v1.md).

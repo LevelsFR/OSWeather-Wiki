@@ -1,18 +1,18 @@
 # Commands
-OS Weather exposes an `/osweather` command family for server administration and inspection.
 
-| Command path | Purpose |
+All listed commands are registered under `/osweather`. Permission level **2** is required for `debug`, `reload`, `set` and `clear`.
+
+| Command | Actual behavior |
 |---|---|
-| `/osweather status` | Overview of the current state |
-| `/osweather info` | Detailed atmospheric information |
-| `/osweather debug` | Debug/diagnostics |
-| `/osweather set` | Request a weather override |
-| `/osweather clear` | Clear an active override |
-| `/osweather reload` | Configuration reload entry point |
+| `/osweather status` | Shows the caller's current Overworld weather summary. Requires a player context. |
+| `/osweather info` | Alias for `status`; it prints the same summary. |
+| `/osweather debug` | Same summary as `status`, gated at permission level 2; it is not a separate diagnostics dump. |
+| `/osweather set <weather> [player [seconds]]` | Applies a visual and gameplay command override. Defaults to the caller and 600 seconds. Duration is 1–86,400 seconds. |
+| `/osweather clear [player]` | Releases only the active `/osweather set` command override for the caller or named player. |
+| `/osweather reload` | Does **not** reload configuration; it tells an administrator to restart the server after changing server settings. |
 
-**Note:** Exact arguments and permission requirements can differ by build; inspect in-game command suggestions. The prerelease does **not** claim fully implemented hot configuration reload.
+Examples: `/osweather set rain`, `/osweather set osweather:heavy_snow Alex 300`, `/osweather clear Alex`.
 
-## Vanilla commands
-Vanilla `/weather clear`, `/weather rain` and `/weather thunder` are bridged to OS Weather overrides, including administrative takeover semantics.
+A weather id without a namespace is lowercased and prefixed with `osweather:`. The optional seconds argument can only follow a player argument. The commands that operate on a player need a player context unless an explicit player is supplied.
 
-For troubleshooting, include exact command arguments, Minecraft version, loader and mod version in your [bug report](support.md).
+Vanilla `/weather clear`, `rain` and `thunder` requests are bridged into OS Weather. This does not establish compatibility with every third-party weather mod. See [support](support.md) for bug-report details.
