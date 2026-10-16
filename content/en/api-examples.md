@@ -74,6 +74,8 @@ The API does not automatically render or synchronize an addon's provider data to
 Call the registration once from your addon's common initialization:
 
 ~~~java
+import com.ourstory.osweather.OSWeather;
+
 OSWeather.api().registerDimensionProvider(new ExampleOverworldProvider());
 ~~~
 
