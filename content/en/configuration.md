@@ -20,7 +20,7 @@ Client options can be changed in-game when the optional configuration-screen dep
 
 | Key | Default | Meaning |
 |---|---:|---|
-| `enabled` | `true` | Enables the server weather service. |
+| `enabled` | `true` | Enables the built-in Overworld simulation and its periodic client sync. Set to `false` to disable those while keeping the public API available to addon providers and overrides. The API-only behavior requires a mod build that includes that change. |
 | `local_weather` | `true` | Uses per-player/local weather behavior. |
 | `gameplay_weather` | `true` | Enables gameplay-side weather integration. |
 | `real_lightning` | `false` | Allows real lightning only when gameplay weather is enabled and `local_weather=false`; strikes are world-global. |
