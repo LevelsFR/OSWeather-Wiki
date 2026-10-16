@@ -1,6 +1,6 @@
 # Référence API v1
 
-**Package :** `com.ourstory.osweather.api` · **Révision API :** `1` · **Version stable du mod :** `1.0` (sortie V1 prête).
+**Package :** `com.ourstory.osweather.api` · **Révision API :** `1` · **Version stable du mod :** `1.0` (V1 stable).
 
 La révision de l’API et la version de sortie du mod sont indépendantes. La version stable V1 du mod est `1.0` ; l’API reste à la révision `1`. Ces pages décrivent des points d’extension techniques, pas une licence de distribution d’addons.
 
