@@ -74,6 +74,8 @@ L’API ne rend pas et ne synchronise pas automatiquement les données du provid
 Appeler cet enregistrement une fois depuis l’initialisation commune de l’addon :
 
 ~~~java
+import com.ourstory.osweather.OSWeather;
+
 OSWeather.api().registerDimensionProvider(new ExampleOverworldProvider());
 ~~~
 
