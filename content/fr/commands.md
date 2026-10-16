@@ -9,7 +9,7 @@ Les commandes sont enregistrées sous `/osweather`. Le niveau de permission **2*
 | `/osweather debug` | Même résumé que `status`, protégé par le niveau 2 ; ce n’est pas un rapport de diagnostic distinct. |
 | `/osweather set <weather> [player [seconds]]` | Applique un override de commande visuel et gameplay. Cible l’appelant par défaut et dure 600 secondes. Durée : 1 à 86 400 secondes. |
 | `/osweather clear [player]` | Libère uniquement l’override créé par `/osweather set` pour l’appelant ou le joueur indiqué. |
-| `/osweather reload` | **Ne recharge pas** la configuration ; indique à l’administrateur de redémarrer le serveur après avoir modifié ses paramètres. |
+| `/osweather reload` | Recharge `osweather-server.toml` et applique immédiatement ses paramètres sans redémarrer le serveur. Nécessite le niveau de permission 2. |
 
 Exemples : `/osweather set rain`, `/osweather set osweather:heavy_snow Alex 300`, `/osweather clear Alex`.
 
