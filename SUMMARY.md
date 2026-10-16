@@ -15,7 +15,7 @@
 - [Dimension providers](content/en/api-dimensions.md)
 
 ## Release and support
-- [Pre-v1 release status](content/en/release-status.md)
+- [Release status](content/en/release-status.md)
 - [FAQ](content/en/faq.md)
 - [Support and bug reports](content/en/support.md)
 - [Rights and permissions](content/en/rights.md)

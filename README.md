@@ -2,9 +2,9 @@
 
 **OS Weather** is a server-authoritative local atmospheric weather simulation for Minecraft, developed by **LevelsFR**.
 
-> This is the public documentation and issue-tracker repository, not the mod source repository. The mod and source code remain private and proprietary: **All Rights Reserved**.
+> This is the public documentation and issue-tracker repository, not the mod source repository. The mod source remains private and proprietary: **All Rights Reserved**.
 
-**Documented mod build:** `0.9.0-beta.10.5` (**pre-v1**) · **API revision:** `1` · **Mod ID:** `osweather`
+**Current public mod build:** `1.0-beta` for Minecraft `1.21.1` on NeoForge · **Published:** 16 October 2026 · **API revision:** `1` · **Mod ID:** `osweather`
 
 ## Documentation
 
@@ -13,10 +13,10 @@ The bilingual [OS Weather Wiki site](https://levelsfr.github.io/OSWeather-Wiki/)
 - [Installation](content/en/installation.md) · [Compatibility matrix](content/en/compatibility.md)
 - [Features](content/en/features.md) · [Commands](content/en/commands.md) · [Configuration](content/en/configuration.md)
 - [API v1](content/en/api-v1.md) · [Integration examples](content/en/api-examples.md) · [Overrides](content/en/api-overrides.md) · [Dimension providers](content/en/api-dimensions.md)
-- [Release validation status](content/en/release-status.md) · [FAQ](content/en/faq.md) · [Support](content/en/support.md)
+- [Release status](content/en/release-status.md) · [FAQ](content/en/faq.md) · [Support](content/en/support.md)
 - [Français](content/fr/index.md)
 
-The six configured variants (Minecraft 1.21.1, 26.2 and 26.3 on Fabric and NeoForge) compile and pass 47 deterministic core smoke scenarios each. **Client launch, world entry and dedicated-server runtime are not yet validated**, so this is not a stable V1 release and no runtime compatibility guarantee is made.
+The author confirms that the v1 beta is validated. The current public CurseForge file targets Minecraft 1.21.1 on NeoForge; it remains a beta, not a stable final `1.0`. See the [compatibility matrix](content/en/compatibility.md) and [CurseForge download page](https://www.curseforge.com/minecraft/mc-mods/os-weather).
 
 ## Support
 

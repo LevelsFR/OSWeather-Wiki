@@ -1,17 +1,11 @@
-# Compatibility matrix
+# Compatibility
 
-**Mod:** `0.9.0-beta.10.5` (pre-v1) · **API revision:** `1`  
-**Build and core smoke verified:** 2026-10-14 · **Runtime verified:** no
+**Current public file:** `1.0-beta` for Minecraft `1.21.1` · **NeoForge** · Java `21`
 
-| Minecraft | Loader | Java | Build + 47-scenario core smoke | Client/world/server runtime |
-|---|---|---:|---|---|
-| 1.21.1 | Fabric | 21 | Pass | Not tested |
-| 1.21.1 | NeoForge | 21 | Pass | Not tested |
-| 26.2 | Fabric | 25 | Pass | Not tested |
-| 26.2 | NeoForge | 25 | Pass | Not tested |
-| 26.3 | Fabric | 25 | Pass | Not tested |
-| 26.3 | NeoForge | 25 | Pass | Not tested |
+CurseForge lists the current release file for Minecraft 1.21.1 on NeoForge, published on 16 October 2026. The author confirms that this v1 beta is validated.
 
-The build used Fabric API `0.116.17+1.21.1`, `0.160.0+26.2`, `0.160.7+26.3`; NeoForge `21.1.250`, `26.2.0.88`, `26.3.0.16-beta`, respectively.
+| Minecraft | Loader | Java | Public file |
+|---|---|---:|---|
+| 1.21.1 | NeoForge | 21 | `1.0-beta` |
 
-A successful compile/smoke check is **not** a claim that the client starts, a world can be joined, or a dedicated server works. Test the exact loader and Minecraft combination before using it on a production world. Other releases are not claimed as supported. See [release status](release-status.md).
+This page describes the published file linked on [CurseForge](https://www.curseforge.com/minecraft/mc-mods/os-weather). Other Minecraft versions and loaders are not covered by that file. Check CurseForge for any later release files before installing.

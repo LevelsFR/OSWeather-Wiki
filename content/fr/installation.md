@@ -1,21 +1,14 @@
 # Installation
 
-> **Préversion :** la build documentée est `0.9.0-beta.10.5`, pas une v1 stable. Ce dépôt documentaire ne publie aucun binaire du mod. Utilisez uniquement un JAR officiellement transmis par l’auteur.
+> La sortie publique actuelle est `1.0-beta` pour Minecraft `1.21.1` sous NeoForge. L’auteur confirme que la v1 beta est validée ; elle reste une version beta.
 
-| Minecraft | Loader | Java | Build/smoke moteur | Runtime en jeu |
-|---|---|---:|---|---|
-| 1.21.1 | Fabric ou NeoForge | 21 | Réussi | Non testé |
-| 26.2 | Fabric ou NeoForge | 25 | Réussi | Non testé |
-| 26.3 | Fabric ou NeoForge | 25 | Réussi | Non testé |
+## Installer le mod
 
-La compilation et les smoke tests ont été vérifiés pour la dernière fois le 14 octobre 2026. Une compilation réussie ne garantit pas le démarrage du jeu ni le chargement d’un monde.
+1. [Téléchargez le fichier actuel d’OS Weather sur CurseForge](https://www.curseforge.com/minecraft/mc-mods/os-weather).
+2. Installez NeoForge pour Minecraft 1.21.1 et utilisez Java 21.
+3. Placez le JAR d’exécution dans le dossier `mods/` de l’instance.
+4. En multijoueur, installez la même version sur le serveur et sur les clients qui le rejoignent.
 
-## Installation
+N’utilisez pas un JAR de sources comme mod. Le fichier public actuel est la build NeoForge pour 1.21.1 ; consultez CurseForge si un fichier plus récent y est listé.
 
-1. Obtenir le JAR runtime officiel correspondant à la version de Minecraft et au loader.
-2. Installer la version correspondante de Fabric ou NeoForge.
-3. Sous Fabric, installer Fabric API pour la même version de Minecraft.
-4. Placer le JAR runtime dans le dossier `mods/` de l’instance.
-5. En multijoueur, utiliser une build correspondante sur le serveur et les clients lorsque nécessaire.
-
-Les paramètres client sont dans `config/osweather-client.toml` ; ceux de la simulation serveur dans le `config/osweather-server.toml` du serveur. Cloth Config/Mod Menu sont des intégrations UI facultatives. N’installez jamais un JAR de sources comme mod. Voir [compatibilité](compatibility.md) et [configuration](configuration.md).
+Les paramètres client se trouvent dans `config/osweather-client.toml`. Les paramètres de simulation serveur sont dans le `config/osweather-server.toml` du serveur. L’écran de configuration facultatif n’est pas requis ; voir [configuration](configuration.md) et [compatibilité](compatibility.md).

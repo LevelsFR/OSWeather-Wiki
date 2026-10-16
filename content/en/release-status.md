@@ -1,19 +1,13 @@
-# Pre-v1 release status
+# V1 beta release status
 
-**Snapshot:** mod `0.9.0-beta.10.5`; API revision `1`. The mod is **not a stable 1.0 release**.
+**Current release:** `1.0-beta` · Minecraft `1.21.1` · NeoForge · published on CurseForge on 16 October 2026.
 
-## Verified locally on 2026-10-14
+The author confirms that the v1 beta is validated. It is a beta release, not a stable final `1.0` release.
 
-- `gradlew assembleAllVersions --no-daemon --max-workers=1` completed successfully.
-- All six configured targets assembled: 1.21.1, 26.2 and 26.3 on Fabric and NeoForge.
-- Each target's `coreSmoke` passed **47 scenarios**.
+## Public release
 
-## Not verified
+The currently listed CurseForge file targets Minecraft 1.21.1 on NeoForge. See the [compatibility page](compatibility.md) for the release scope and the [CurseForge download page](https://www.curseforge.com/minecraft/mc-mods/os-weather) for the current file.
 
-- Gradle `test` tasks were skipped by the aggregate build.
-- No Minecraft client launch, world entry, multiplayer session or dedicated-server launch was performed.
-- Rendering, shader/resource-pack interactions, networking under real play, server performance and config UI still need runtime checks.
-- The 26.3 generated client code emitted a deprecation note. Runtime impact has not been established.
-- No official downloadable JAR or standalone Maven API artifact is published from this documentation repository.
+## Public API
 
-These results establish **build and deterministic core-smoke status only**, not full gameplay compatibility or release readiness. See the [compatibility matrix](compatibility.md).
+The public API is at revision `1`; API revision and mod version are independent. No standalone API JAR or Maven coordinates are published. The source repository remains private. See [API v1](api-v1.md) and [rights and permissions](rights.md).
