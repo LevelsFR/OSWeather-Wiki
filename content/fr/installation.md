@@ -1,6 +1,6 @@
 # Installation
 
-> La version stable V1 d’OS Weather est la `1.0`. Installez uniquement un fichier stable `1.0` correspondant à votre version de Minecraft et à votre loader. CurseForge ne liste actuellement que l’ancienne beta pour 1.21.1 NeoForge ; vérifiez que les fichiers stables sont disponibles avant le téléchargement.
+> La version stable V1 d’OS Weather est la `1.0`. Installez uniquement un fichier stable `1.0` correspondant à votre version de Minecraft et à votre loader. CurseForge n’affiche pas encore les packages stables pour toute la matrice ; vérifiez que le fichier correspondant est disponible avant de le télécharger.
 
 ## Installer le mod
 
