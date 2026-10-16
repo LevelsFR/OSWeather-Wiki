@@ -5,7 +5,7 @@
 API revision 1 does not mean the mod is version 1.0 or grant permission to distribute an integration. No standalone API JAR or Maven coordinates are currently published; an addon needs an authorized compile-time dependency matching the mod build. See [API reference](api-v1.md) and [rights](rights.md).
 
 ## Read gameplay weather
-```java
+~~~java
 import com.ourstory.osweather.OSWeather;
 import com.ourstory.osweather.api.weather.WeatherContext;
 import com.ourstory.osweather.api.weather.AtmosphereSnapshot;
@@ -18,10 +18,10 @@ AtmosphereSnapshot weather = OSWeather.api().gameplayWeather(context);
 if (weather.isThundering()) {
     // Run your addon's storm-dependent behavior.
 }
-```
+~~~
 
 ## Create and clean up a visual override
-```java
+~~~java
 import com.ourstory.osweather.OSWeather;
 import com.ourstory.osweather.api.override.WeatherOverride;
 import com.ourstory.osweather.api.override.OverrideHandle;
@@ -33,10 +33,10 @@ WeatherOverride event = new WeatherOverride(
 OverrideHandle handle = OSWeather.api().setOverride(playerUuid, event);
 // Later, when your event ends:
 OSWeather.api().releaseOverride(handle);
-```
+~~~
 
 ## Provide weather for another dimension
-```java
+~~~java
 import com.ourstory.osweather.OSWeather;
 import com.ourstory.osweather.api.provider.DimensionWeatherProvider;
 import com.ourstory.osweather.api.weather.WeatherContext;
@@ -53,6 +53,71 @@ DimensionWeatherProvider provider = new DimensionWeatherProvider() {
     }
 };
 OSWeather.api().registerDimensionProvider(provider);
-```
+~~~
 
 The final provider must return suitable weather data rather than the placeholder `CLEAR` value. Before distribution, verify lifecycle cleanup, dependency behavior and both loaders, and check the [rights statement](rights.md).
+
+## Run an addon in API-only mode
+
+On the server, set this in `config/osweather-server.toml`:
+
+~~~toml
+enabled = false
+~~~
+
+Restart the server after changing the setting. In a build that includes API-only mode, this stops OS Weather's built-in Overworld simulation and its periodic weather sync. The public API stays available. A registered provider can then answer queries for `minecraft:overworld`; without a provider, the API starts from clear weather, then applies active overrides. With the built-in simulation enabled, OS Weather remains the Overworld provider.
+
+The API does not automatically render or synchronize an addon's provider data to clients. The addon must query the API and implement any client presentation or gameplay behavior it needs. This mode is available only in builds that include the API-only change; check the installed build's release notes.
+
+### Register an Overworld provider
+
+Call the registration once from your addon's common initialization:
+
+~~~java
+OSWeather.api().registerDimensionProvider(new ExampleOverworldProvider());
+~~~
+
+~~~java
+import com.ourstory.osweather.api.provider.DimensionWeatherProvider;
+import com.ourstory.osweather.api.weather.AtmosphereSnapshot;
+import com.ourstory.osweather.api.weather.WeatherContext;
+
+public final class ExampleOverworldProvider implements DimensionWeatherProvider {
+    @Override
+    public String id() {
+        return "youraddon:overworld_weather";
+    }
+
+    @Override
+    public int priority() {
+        return 10;
+    }
+
+    @Override
+    public boolean supports(String dimensionId) {
+        return "minecraft:overworld".equals(dimensionId);
+    }
+
+    @Override
+    public AtmosphereSnapshot query(WeatherContext context) {
+        // Example fixed rain values; replace these with your addon's weather state.
+        return new AtmosphereSnapshot(
+            "youraddon:rain",
+            "youraddon:example_rain",
+            16.0f, 0.80f, 1008.0f,
+            0.12f, -0.04f,
+            0.90f, 0.70f, 0.0f,
+            0.05f, 0.0f, 0.0f, 0.80f,
+            context.gameTick()
+        );
+    }
+}
+~~~
+
+Query the result wherever your addon needs a snapshot:
+
+~~~java
+AtmosphereSnapshot weather = OSWeather.api().visualWeather(context);
+~~~
+
+Use `gameplayWeather(context)` for gameplay decisions. Visual and gameplay overrides are applied after the provider result. Keep the provider logic safe for the thread and lifecycle from which your addon queries it.
