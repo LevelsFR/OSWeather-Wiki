@@ -20,7 +20,7 @@ Les options client sont modifiables en jeu si les dépendances facultatives de l
 
 | Clé | Défaut | Rôle |
 |---|---:|---|
-| `enabled` | `true` | Active le service météo serveur. |
+| `enabled` | `true` | Active la simulation Overworld intégrée et sa synchronisation périodique aux clients. Mettre `false` pour les désactiver tout en conservant l’API publique pour les providers et overrides d’addons. Le mode API seule nécessite une build du mod qui inclut cette modification. |
 | `local_weather` | `true` | Utilise le comportement météo local/par joueur. |
 | `gameplay_weather` | `true` | Active l’intégration météo gameplay. |
 | `real_lightning` | `false` | Autorise les éclairs réels uniquement si le gameplay météo est activé et `local_weather=false` ; les impacts sont globaux au monde. |
