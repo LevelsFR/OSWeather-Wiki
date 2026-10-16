@@ -124,7 +124,7 @@ def page_html(language: str, page: str, body: str, headings: list[tuple[int,str,
 <header class="topbar">
     <button id="menu-button" class="menu-button" type="button" aria-label="{menu_label}">☰</button>
     <a class="brand" href="index.html" aria-label="OS Weather Wiki">
-      <span class="brand-copy"><strong>OS Weather <span class="brand-version">0.9 beta</span></strong><small>Wiki</small></span>
+      <span class="brand-copy"><strong>OS Weather <span class="brand-version">1.0 beta</span></strong><small>Wiki</small></span>
     </a>
     <div class="search-wrap">
       <span class="search-icon" aria-hidden="true"></span>
@@ -157,7 +157,7 @@ def page_html(language: str, page: str, body: str, headings: list[tuple[int,str,
       {body}
       <footer class="article-meta">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7v5l3 2"></path></svg>
-        <span>OS Weather 0.9.0-beta.10.5 · API v1 · {footer_label}</span>
+        <span>OS Weather 1.0-beta · API v1 · {footer_label}</span>
       </footer>
     </article>
   </main>
