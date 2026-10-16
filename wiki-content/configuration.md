@@ -14,17 +14,17 @@ OS Weather separates client-only presentation options from server-owned simulati
 | `sounds` | `true` | Enables weather sounds. |
 | `cloud_quality` | `2` | Cloud detail: 0 low, 1 medium, 2 high, 3 ultra (clamped to 0–3). |
 
-Client options can be changed in-game when the optional configuration-screen dependencies are installed, or edited directly in the file. On Fabric, Cloth Config provides the screen and optional Mod Menu exposes its entry. NeoForge registers the screen when Cloth Config is available. Neither is required for the mod to load.
+Client options can be changed in-game when the optional configuration-screen dependencies are installed, or edited directly in the file. On Fabric, Cloth Config provides the screen and optional Mod Menu exposes its entry. NeoForge registers the screen when Cloth Config is available. Neither is required for the mod to load. While connected to an OS Weather server, an operator can also use the Server category in the Cloth Config screen.
 
 ## Server: `osweather-server.toml`
 
 | Key | Default | Meaning |
 |---|---:|---|
-| `enabled` | `true` | Enables the built-in Overworld simulation and its periodic client sync. Set to `false` to disable those while keeping the public API available to addon providers and overrides. The API-only behavior requires a mod build that includes that change. |
+| `enabled` | `true` | Enables the built-in Overworld simulation and its periodic client sync. Set to `false` to disable those while keeping the public API available to addon providers and overrides. API-only mode is included in stable release `1.0`. |
 | `local_weather` | `true` | Uses per-player/local weather behavior. |
 | `gameplay_weather` | `true` | Enables gameplay-side weather integration. |
 | `real_lightning` | `false` | Allows real lightning only when gameplay weather is enabled and `local_weather=false`; strikes are world-global. |
 | `sync_interval_ticks` | `100` | Snapshot interval, clamped to 40–1,200 ticks. |
 | `sleep_calming_bias` | `0.10` | Sleep-calming bias, clamped to 0–0.35. |
 
-The server is authoritative. Server-file changes require a server restart; `/osweather reload` only displays that restart notice and does not reload settings. Never post an unredacted live server configuration in a bug report.
+The server is authoritative. An operator's in-game Server settings are saved on the server and applied immediately without a restart. After editing `osweather-server.toml` directly, an operator can run `/osweather reload` to load and apply the changes live. Never post an unredacted live server configuration in a bug report.
