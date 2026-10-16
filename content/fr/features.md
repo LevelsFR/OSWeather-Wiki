@@ -9,5 +9,7 @@ OS Weather calcule côté serveur les conditions atmosphériques locales de l’
 - **États météo** pour la pluie, la neige, le vent, les nuages, le brouillard, les orages, les tempêtes de sable et les blizzards.
 - **Overrides visuels et gameplay** avec priorités et handles de libération explicites.
 - **API de providers de dimensions** pour les intégrations d’addons.
+- **Configuration serveur en direct** pour les OP dans l’onglet Serveur en jeu, appliquée sans redémarrage.
+- **Mode API seule** pour désactiver la simulation intégrée tout en gardant l’API disponible aux addons.
 
-L’auteur confirme qu’OS Weather est prêt pour sa version stable V1 (`1.0`). Les commandes vanilla `/weather clear/rain/thunder` sont reliées au mod, sans garantie de compatibilité avec chaque autre mod météo ou graphique. Voir le [statut de sortie](release-status.md).
+OS Weather est la sortie stable V1 (`1.0`). Les commandes vanilla `/weather clear/rain/thunder` sont reliées au mod, sans garantie de compatibilité avec chaque autre mod météo ou graphique. Voir le [statut de sortie](release-status.md).
