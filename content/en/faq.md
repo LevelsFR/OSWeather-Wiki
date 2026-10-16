@@ -1,7 +1,7 @@
 # FAQ
 
-## Is the stable V1 release ready?
-Yes. The author confirms that OS Weather is ready for the stable `1.0` release. The CurseForge page currently lists only the earlier beta file for Minecraft 1.21.1 on NeoForge; see [release status](release-status.md) for the distinction between release readiness and file availability.
+## What is the current release?
+OS Weather is the stable V1 release, version `1.0`. The CurseForge page does not yet show stable packages for every supported target; see [release status](release-status.md) for file availability.
 
 ## Which Minecraft versions and loaders does stable V1 support?
 The stable V1 target matrix covers Minecraft 1.21.1, 26.2.x and 26.3.x on both Fabric and NeoForge. CurseForge determines which stable JARs have actually been uploaded; see the [compatibility page](compatibility.md).
@@ -17,6 +17,9 @@ The built-in simulation owns the Overworld. The API exposes a dimension-provider
 
 ## Are Cloth Config or Mod Menu required?
 No. They are optional configuration-screen integrations where supported. TOML files remain available without them; see [configuration](configuration.md).
+
+## Can server settings be changed without restarting?
+Yes. An operator can use the in-game Server settings tab. If the server TOML file is edited directly, an operator can run `/osweather reload` to apply the changes immediately.
 
 ## Can I distribute an addon using the API?
 The API pages describe technical hooks, not legal permission. Obtain written authorization where needed; see [rights](rights.md).
