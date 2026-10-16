@@ -10,4 +10,4 @@ OS Weather calcule côté serveur les conditions atmosphériques locales de l’
 - **Overrides visuels et gameplay** avec priorités et handles de libération explicites.
 - **API de providers de dimensions** pour les intégrations d’addons.
 
-L’auteur confirme que la v1 beta actuelle est validée. Les commandes vanilla `/weather clear/rain/thunder` sont reliées au mod, sans garantie de compatibilité avec chaque autre mod météo ou graphique. Voir le [statut de sortie](release-status.md).
+L’auteur confirme qu’OS Weather est prêt pour sa version stable V1 (`1.0`). Les commandes vanilla `/weather clear/rain/thunder` sont reliées au mod, sans garantie de compatibilité avec chaque autre mod météo ou graphique. Voir le [statut de sortie](release-status.md).

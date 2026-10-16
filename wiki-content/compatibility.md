@@ -1,11 +1,16 @@
 # Compatibility
 
-**Current public file:** `1.0-beta` for Minecraft `1.21.1` · **NeoForge** · Java `21`
+**Stable mod version:** `1.0` · **Status:** V1 release ready
 
-CurseForge lists the current release file for Minecraft 1.21.1 on NeoForge, published on 16 October 2026. The author confirms that this v1 beta is validated.
+The stable V1 release targets the following Minecraft and loader combinations:
 
-| Minecraft | Loader | Java | Public file |
+| Minecraft | Loader | Java | Stable release |
 |---|---|---:|---|
-| 1.21.1 | NeoForge | 21 | `1.0-beta` |
+| 1.21.1 | Fabric | 21 | `1.0` |
+| 1.21.1 | NeoForge | 21 | `1.0` |
+| 26.2.x | Fabric | 25 | `1.0` |
+| 26.2.x | NeoForge | 25 | `1.0` |
+| 26.3.x | Fabric | 25 | `1.0` |
+| 26.3.x | NeoForge | 25 | `1.0` |
 
-This page describes the published file linked on [CurseForge](https://www.curseforge.com/minecraft/mc-mods/os-weather). Other Minecraft versions and loaders are not covered by that file. Check CurseForge for any later release files before installing.
+Each combination requires its matching runtime JAR. The CurseForge page currently lists only the earlier `1.0-beta` file for Minecraft 1.21.1 on NeoForge. Check the [CurseForge files page](https://www.curseforge.com/minecraft/mc-mods/os-weather) to confirm which stable packages are available; the beta file is not the stable release.

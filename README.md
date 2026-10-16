@@ -4,7 +4,7 @@
 
 > This is the public documentation and issue-tracker repository, not the mod source repository. The mod source remains private and proprietary: **All Rights Reserved**.
 
-**Current public mod build:** `1.0-beta` for Minecraft `1.21.1` on NeoForge · **Published:** 16 October 2026 · **API revision:** `1` · **Mod ID:** `osweather`
+**Stable release:** `1.0` · **V1 status:** ready for stable release · **Target matrix:** Minecraft `1.21.1`, `26.2.x`, `26.3.x` on Fabric and NeoForge · **API revision:** `1` · **Mod ID:** `osweather`
 
 ## Documentation
 
@@ -16,7 +16,7 @@ The bilingual [OS Weather Wiki site](https://levelsfr.github.io/OSWeather-Wiki/)
 - [Release status](content/en/release-status.md) · [FAQ](content/en/faq.md) · [Support](content/en/support.md)
 - [Français](content/fr/index.md)
 
-The author confirms that the v1 beta is validated. The current public CurseForge file targets Minecraft 1.21.1 on NeoForge; it remains a beta, not a stable final `1.0`. See the [compatibility matrix](content/en/compatibility.md) and [CurseForge download page](https://www.curseforge.com/minecraft/mc-mods/os-weather).
+The author confirms that OS Weather is ready for stable V1 release `1.0`. The current [CurseForge listing](https://www.curseforge.com/minecraft/mc-mods/os-weather) still shows only the earlier `1.0-beta` file for Minecraft 1.21.1 on NeoForge; the compatibility matrix describes the stable release targets.
 
 ## Support
 

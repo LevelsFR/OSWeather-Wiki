@@ -2,7 +2,7 @@
 
 > Ces extraits illustrent les signatures API documentées. Rédigés indépendamment, ils ne sont **ni compilés ni testés comme addon prêt à installer** et ne sont pas copiés depuis le code privé.
 
-La révision 1 de l’API ne signifie pas que le mod est en version 1.0 et n’autorise pas la distribution d’une intégration. Aucun JAR API autonome ni coordonnées Maven ne sont publiés ; un addon nécessite une dépendance de compilation autorisée correspondant à la build du mod. Voir la [référence API](api-v1.md) et les [droits](rights.md).
+La révision `1` de l’API et la version stable `1.0` du mod sont indépendantes. La documentation de l’API n’autorise pas la distribution d’une intégration. Aucun JAR API autonome ni coordonnées Maven ne sont publiés ; un addon nécessite une dépendance de compilation autorisée correspondant à la build du mod. Voir la [référence API](api-v1.md) et les [droits](rights.md).
 
 ## Lire la météo gameplay
 ~~~java

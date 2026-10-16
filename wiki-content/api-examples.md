@@ -2,7 +2,7 @@
 
 > These snippets illustrate the documented API signatures. They were written independently, are **not compiled or tested as a drop-in addon**, and are not copied from the private source.
 
-API revision 1 does not mean the mod is version 1.0 or grant permission to distribute an integration. No standalone API JAR or Maven coordinates are currently published; an addon needs an authorized compile-time dependency matching the mod build. See [API reference](api-v1.md) and [rights](rights.md).
+API revision `1` and the stable mod version `1.0` are independent version numbers. API documentation does not grant permission to distribute an integration. No standalone API JAR or Maven coordinates are currently published; an addon needs an authorized compile-time dependency matching the mod build. See [API reference](api-v1.md) and [rights](rights.md).
 
 ## Read gameplay weather
 ~~~java

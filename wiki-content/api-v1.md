@@ -1,8 +1,8 @@
 # API v1 Reference
 
-**Package:** `com.ourstory.osweather.api` · **API revision:** `1` · **Current published mod build:** `1.0-beta` for Minecraft `1.21.1` NeoForge.
+**Package:** `com.ourstory.osweather.api` · **API revision:** `1` · **Stable mod release:** `1.0` (V1 release ready).
 
-The API revision and mod release version are independent. The current mod build is a beta, not a stable final release. These pages document technical extension points, not a license to distribute addons.
+The API revision and mod release version are independent. The stable V1 mod release is `1.0`; the API remains revision `1`. These pages document technical extension points, not a license to distribute addons.
 
 ## Main entry points
 

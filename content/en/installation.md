@@ -1,6 +1,6 @@
 # Installation
 
-> The current public release is `1.0-beta` for Minecraft `1.21.1` on NeoForge. The author confirms that the v1 beta is validated; it remains a beta release.
+> The stable OS Weather V1 release is version `1.0`. Install only a stable `1.0` file matching your Minecraft version and loader. The CurseForge page currently lists only the earlier beta file for Minecraft 1.21.1 NeoForge; check that stable files are available before downloading.
 
 ## Install the mod
 
@@ -9,6 +9,6 @@
 3. Put the runtime JAR in the instance's `mods/` directory.
 4. For multiplayer, install the matching release on the server and on the clients that join.
 
-Do not use a source JAR as the mod. The current public file is the 1.21.1 NeoForge build; check CurseForge if a newer file is listed.
+Do not use a source JAR. Each Minecraft/loader combination requires its matching runtime JAR; see the [compatibility matrix](compatibility.md) and the CurseForge files page.
 
 Client settings are stored in `config/osweather-client.toml`. Server simulation settings are in `config/osweather-server.toml` on the server. The optional configuration screen is not required; see [configuration](configuration.md) and [compatibility](compatibility.md).

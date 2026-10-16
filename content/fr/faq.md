@@ -1,16 +1,16 @@
 # FAQ
 
-## OS Weather est-il une version stable ?
-Le build public actuel est `1.0-beta`, pas une version finale stable `1.0`. L’auteur confirme que la v1 beta pour Minecraft 1.21.1 est validée. Voir le [statut de sortie](release-status.md).
+## La sortie stable V1 est-elle prête ?
+Oui. L’auteur confirme qu’OS Weather est prêt pour la version stable `1.0`. CurseForge ne liste actuellement que l’ancienne beta pour Minecraft 1.21.1 sous NeoForge ; voir le [statut de sortie](release-status.md) pour distinguer la préparation de la release de la disponibilité des fichiers.
 
-## Quelle version de Minecraft et quel loader sont ciblés par le fichier actuel ?
-Le fichier public CurseForge cible Minecraft 1.21.1 sous NeoForge. Les autres versions de Minecraft et loaders ne sont pas couverts par ce fichier ; voir la [page de compatibilité](compatibility.md).
+## Quelles versions de Minecraft et quels loaders sont pris en charge par la V1 stable ?
+La matrice V1 stable couvre Minecraft 1.21.1, 26.2.x et 26.3.x sous Fabric et NeoForge. CurseForge indique les JAR stables effectivement publiés ; voir la [page de compatibilité](compatibility.md).
 
 ## Où télécharger le mod ?
 Téléchargez le JAR d’exécution actuel sur [CurseForge](https://www.curseforge.com/minecraft/mc-mods/os-weather). Ce dépôt documentaire n’héberge pas le binaire du mod.
 
-## La révision 1 de l’API signifie-t-elle que le mod est une version stable 1.0 ?
-Non. La révision de l’API est indépendante de la version du mod. Le build actuel est `1.0-beta`.
+## La révision 1 de l’API est-elle le même numéro que la version 1.0 du mod ?
+Non. La révision API et la version du mod sont indépendantes. La version stable du mod est `1.0` et l’API est à la révision `1`.
 
 ## Le mod gère-t-il les dimensions hors Overworld ?
 La simulation intégrée gère l’Overworld. L’API expose un point d’extension pour les providers de dimensions, sans garantir la compatibilité avec un addon ou mod de dimension particulier.
