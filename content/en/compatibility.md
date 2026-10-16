@@ -1,6 +1,6 @@
 # Compatibility
 
-**Stable mod version:** `1.0` · **Status:** V1 release ready
+**Stable mod version:** `1.0` · **Status:** V1 stable release
 
 The stable V1 release targets the following Minecraft and loader combinations:
 
@@ -13,4 +13,4 @@ The stable V1 release targets the following Minecraft and loader combinations:
 | 26.3.x | Fabric | 25 | `1.0` |
 | 26.3.x | NeoForge | 25 | `1.0` |
 
-Each combination requires its matching runtime JAR. The CurseForge page currently lists only the earlier `1.0-beta` file for Minecraft 1.21.1 on NeoForge. Check the [CurseForge files page](https://www.curseforge.com/minecraft/mc-mods/os-weather) to confirm which stable packages are available; the beta file is not the stable release.
+Each combination requires its matching runtime JAR. The [CurseForge files page](https://www.curseforge.com/minecraft/mc-mods/os-weather) does not yet list stable `1.0` packages for the full matrix. Check the exact Minecraft version and loader on each file before downloading.
