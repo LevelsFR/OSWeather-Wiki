@@ -7,7 +7,7 @@ Yes. The author confirms that OS Weather is ready for the stable `1.0` release. 
 The stable V1 target matrix covers Minecraft 1.21.1, 26.2.x and 26.3.x on both Fabric and NeoForge. CurseForge determines which stable JARs have actually been uploaded; see the [compatibility page](compatibility.md).
 
 ## Where can I download the mod?
-Download the current runtime JAR from [CurseForge](https://www.curseforge.com/minecraft/mc-mods/os-weather). This documentation repository does not host the mod binary.
+Download the stable `1.0` runtime JAR matching your Minecraft version and loader from [CurseForge](https://www.curseforge.com/minecraft/mc-mods/os-weather). If the stable file for your target is not listed yet, it is not available to download. This documentation repository does not host the mod binary.
 
 ## Is API revision 1 the same version number as mod 1.0?
 No. API revision and mod version are independent. The stable mod release is `1.0`, and the API revision is `1`.
