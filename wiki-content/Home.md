@@ -2,7 +2,7 @@
 
 **OS Weather** is a server-authoritative local atmospheric weather simulation for Minecraft's Overworld.
 
-> **Stable V1:** `1.0`, ready for release. Targets: Minecraft `1.21.1`, `26.2.x` and `26.3.x` on Fabric and NeoForge. CurseForge currently lists only the earlier `1.0-beta` file for 1.21.1 NeoForge; check the download page for stable files.
+> **Stable V1 release:** `1.0`. Supported targets: Minecraft `1.21.1`, `26.2.x` and `26.3.x` on Fabric and NeoForge. The CurseForge listing does not yet show stable packages for the full target matrix; check the exact file version and loader before downloading.
 
 **Public API revision:** `1` · The API revision and mod release version are independent.
 
