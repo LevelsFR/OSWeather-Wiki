@@ -65,9 +65,9 @@ On the server, set this in `config/osweather-server.toml`:
 enabled = false
 ~~~
 
-Restart the server after changing the setting. In a build that includes API-only mode, this stops OS Weather's built-in Overworld simulation and its periodic weather sync. The public API stays available. A registered provider can then answer queries for `minecraft:overworld`; without a provider, the API starts from clear weather, then applies active overrides. With the built-in simulation enabled, OS Weather remains the Overworld provider.
+In stable release `1.0`, this setting stops OS Weather's built-in Overworld simulation and its periodic weather sync. The public API stays available. A registered provider can then answer queries for `minecraft:overworld`; without a provider, the API starts from clear weather, then applies active overrides. With the built-in simulation enabled, OS Weather remains the Overworld provider. An operator can change the setting in the in-game Server tab without restarting. After editing the TOML directly, run `/osweather reload` as an operator.
 
-The API does not automatically render or synchronize an addon's provider data to clients. The addon must query the API and implement any client presentation or gameplay behavior it needs. This mode is available only in builds that include the API-only change; check the installed build's release notes.
+The API does not automatically render or synchronize an addon's provider data to clients. The addon must query the API and implement any client presentation or gameplay behavior it needs.
 
 ### Register an Overworld provider
 
