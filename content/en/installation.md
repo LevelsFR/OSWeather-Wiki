@@ -1,6 +1,6 @@
 # Installation
 
-> The stable OS Weather V1 release is version `1.0`. Install only a stable `1.0` file matching your Minecraft version and loader. The CurseForge page currently lists only the earlier beta file for Minecraft 1.21.1 NeoForge; check that stable files are available before downloading.
+> The stable OS Weather V1 release is version `1.0`. Install only a stable `1.0` file matching your Minecraft version and loader. The CurseForge page does not yet list stable packages for the full target matrix; verify that the matching stable file is available before downloading.
 
 ## Install the mod
 
