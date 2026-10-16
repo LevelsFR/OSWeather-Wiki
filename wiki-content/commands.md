@@ -9,7 +9,7 @@ All listed commands are registered under `/osweather`. Permission level **2** is
 | `/osweather debug` | Same summary as `status`, gated at permission level 2; it is not a separate diagnostics dump. |
 | `/osweather set <weather> [player [seconds]]` | Applies a visual and gameplay command override. Defaults to the caller and 600 seconds. Duration is 1–86,400 seconds. |
 | `/osweather clear [player]` | Releases only the active `/osweather set` command override for the caller or named player. |
-| `/osweather reload` | Does **not** reload configuration; it tells an administrator to restart the server after changing server settings. |
+| `/osweather reload` | Reloads `osweather-server.toml` and applies its settings immediately without restarting the server. Requires permission level 2. |
 
 Examples: `/osweather set rain`, `/osweather set osweather:heavy_snow Alex 300`, `/osweather clear Alex`.
 
