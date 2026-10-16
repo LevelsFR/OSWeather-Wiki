@@ -5,7 +5,7 @@
 ## Install the mod
 
 1. [Download the stable OS Weather 1.0 file from CurseForge](https://www.curseforge.com/minecraft/mc-mods/os-weather) that matches your Minecraft version and loader.
-2. Install NeoForge for Minecraft 1.21.1 and use Java 21.
+2. Install the matching Minecraft and loader target. Use Java 21 for Minecraft 1.21.1 and Java 25 for 26.2.x/26.3.x.
 3. Put the runtime JAR in the instance's `mods/` directory.
 4. For multiplayer, install the matching release on the server and on the clients that join.
 
